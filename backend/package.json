@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "C Lokesh Kumar Reddy",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "imapflow": "^1.1.1",
+    "mailparser": "^3.9.0",
+    "mammoth": "^1.11.0",
+    "mongodb": "^7.0.0",
+    "nodemailer": "^7.0.11",
+    "openai": "^6.10.0",
+    "pdf-parse": "^2.4.5",
+    "xlsx": "^0.18.5"
+  }
+}
