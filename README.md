@@ -74,10 +74,15 @@ npm run dev
 
 Vite prints the local URL (usually `http://localhost:5173`). The app proxies requests to the backend using `VITE_API_URL`.
 
-### Additional Frontend Scripts
-- `npm run build` – production build to `dist/`.
-- `npm run preview` – serve the built assets locally to verify the bundle.
-- `npm run lint` – run ESLint checks.
+## Tech Stack
+
+- **Frontend** - React Js, Shadcn UI, Tailwindcss, Vite
+- **Backend** - Nodejs, Expressjs, openai
+- **Mail Service** - Gmail, SMTP
+- **AI Provider** - Open AI - gpt-mini-40
+- **Key Libraries** - pdf-parser, imapflow, mamooth
+- **Database** - MongoDB
+
 
 ## API Endpoints
 - `GET /health` – simple heartbeat that returns `{ ok: true }`.
@@ -104,5 +109,13 @@ Vite prints the local URL (usually `http://localhost:5173`). The app proxies req
 - **Close Deal** (`POST /api/rfps/:id/close`): requires `proposalId` in the body; optional `notes` saved as `closureNotes` along with `selectedProposalId`, `status: "closed"`, and `closedAt`.
 - **General retrieval**: every handler fetches the RFP first (`rfpServices.getById`) and immediately returns 404 if absent, preventing downstream operations with invalid IDs.
 
-## Next Steps
-1. Confirm MongoDB, email inbox, and API keys are reachable from your environment.
+## Decisions && Assumptions
+   - I assumed all the procurement manager always ask the model regarding the procurement decisions and he will enter a valid natural text.
+   - The vendors always send a valid proposal.
+   - The scoring will be based on the budget and the how well the  proposal is aligned with the rfp. 
+
+## AI Tool Usage
+
+- I used Openai codex and Anthropic claude for generating boiler plate code and it helped to improve prompts in generating structured rp and propsal analyzing prompts.
+- It helped in developing the document parser which parses the pdf, txt and xlsx formats.
+- The frontend UI was redesigned with the help of Claude.
